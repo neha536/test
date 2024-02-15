@@ -23,6 +23,7 @@ library(labelled)
 
 setwd('C:/Users/neha.verghese/Downloads/IAKR7EDT')
 
+
 geo<- st_read("C:/Users/neha.verghese/Downloads/IAKR7EDT/NFHS_Shp_Correct.shp")
 
 kr_geo <- geo %>% filter(OTHREGCO== 29)
@@ -44,7 +45,6 @@ kr<- kr %>% filter(hw70<9989) %>% filter(v024==29) %>%
 
 
 
-#MATERNAL HEALTH
 
 kr <- kr %>% mutate(visited_awc= ifelse(s562==2 | s562==1, 1, 0))
 kr <- kr %>% mutate(no_ed= ifelse(v106==0, 1, 0))%>% 
